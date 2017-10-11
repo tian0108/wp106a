@@ -29,6 +29,14 @@ const template = [
         }
       },
       {
+        lable :'Newfile',
+        accelerator:'CmdOrCtrl+N',
+        click:function(){
+          var text =document.getElementById('text')
+          text.value =null
+        }
+      },
+      {
         label: 'Save',
         accelerator: 'CmdOrCtrl+S',
         click: function () {
@@ -37,7 +45,21 @@ const template = [
           var text = document.getElementById('text')
           fs.writeFile(fileName, text.value)
         }
-      }
+      },
+      
+      {
+        label:'Save as',
+        accelerator:'Ctrl+Shift+A',
+        click: function saveFile () {
+          dialog.showSaveDialog(function (fileName){
+            if (fileName === undefined) 
+            return;
+            var text = document.getElementById('text')
+            fs.writeFile(fileName,text.value)
+          });
+        }
+      },
+      { label:"Exit" , role:"close" },
     ]
   },
   {
