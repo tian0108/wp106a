@@ -29,7 +29,7 @@ const template = [
         }
       },
       {
-        lable :'Newfile',
+        label :'Newfile',
         accelerator:'CmdOrCtrl+N',
         click:function(){
           var text =document.getElementById('text')
